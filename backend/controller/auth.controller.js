@@ -44,7 +44,7 @@ export const signup = async (req, res) => {
                 gender: newUser.gender,
                 profilePic: newUser.profilePic
             })
-        } else {
+        } else {    
             res.status(400).json({ error: "Invalid user data" })
         }
 
@@ -57,27 +57,33 @@ export const signup = async (req, res) => {
 export const login = async (req, res) => {
     try {
         const {username,password}=req.body
-
+        
         const user = await User.findOne({ username });
-        if(!user){
-            return res.status(400).json({ error: "Invalid user name" })   
-        }else{
-            if(user.password !== password){
-                return res.status(400).json({ error: "Username or password not correct" }) 
+        const isPassWordCorrect = await bcrypt.compare(password,user?.password || "")
+        
+        if(!user || !isPassWordCorrect){
+            return res.status(400).json({ error: "Username or password not correct" }) 
             }
-            res.status(201).json({
-                _id: user._id,
-                fullName: user.fullName,
-                password: user.password,
-                gender: user.gender,
-                profilePic: user.profilePic
+        
+        generateTokenAndsetCookie(user._id,res)
+        res.status(201).json({
+            _id: user._id,
+            fullName: user.fullName,
+
+            gender: user.gender,
+            profilePic: user.profilePic
             })
-        }
-    } catch (error) {
+        } catch (error) {
         console.log("error in login controller", error.message)
         res.status(500).json({ error: error.message })   
     }
 }
 export const logout = (req, res) => {
-    console.log("logoutUser");
+    try {
+        res.cookie("jwt","",{maxAge:0});
+        res.status(200).json({message:"Logged out successfully"})
+    } catch (error) {
+        console.log("error in login controller", error.message)
+        res.status(500).json({ error: error.message })  
+    }
 }
