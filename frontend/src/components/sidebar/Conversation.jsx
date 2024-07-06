@@ -11,14 +11,14 @@ const Conversation = ({conversation,lastIdx,emoji}) => {
 
 	return (
 		<>
-			<div className={`flex gap-2 items-center hover:bg-sky-500 rounded p-2 py-1 cursor-pointer
-			${isSelected ? "bg-sky-500":""}
+			<div className={`flex gap-2 items-center hover:bg-sky-200 rounded p-2 py-1 cursor-pointer
+			${isSelected ? "bg-sky-200":""}
 			`}
 			// 
 			 onClick={() => {setSelectedConversation(conversation)}}
 			>
 				<div className={`avatar ${isOnline ? "online" : ""}`}>
-					<div className='w-12 rounded-full'>
+					<div className='w-10 rounded-full'>
 						<img
 							src={conversation.profilePic}
 							alt='user avatar'
@@ -27,8 +27,8 @@ const Conversation = ({conversation,lastIdx,emoji}) => {
 				</div>
 
 				<div className='flex flex-col flex-1'>
-					<div className='flex gap-3 justify-between'>
-						<p className='font-bold text-gray-200'>{conversation.fullName}</p>
+					<div className='flex gap-2 justify-between'>
+						<p className={` text-slate-700 ${isSelected ? "text-white":"text-black"}`}>{conversation.fullName}</p>
 						<span className='text-xl'>{emoji}</span>
 					</div>
 				</div>
