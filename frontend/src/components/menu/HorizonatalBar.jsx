@@ -35,19 +35,19 @@ const HorizonatalBar = () => {
               className="fixed top-0 left-0 w-80 h-full bg-white shadow-lg z-20 transition-transform duration-300 ease-in-out transform translate-x-0"
             >
               {/* Your sidebar content goes here */}
-              <div className='bg-slate-300 '>
+              <div className='bg-slate-500 '>
                 <img className='w-16  pt-2 mx-4 rounded-full ' src={`${authUser.profilePic}`} alt="" />
-               <h2 className="p-4 text-xl ">{authUser.fullName}</h2>
+               <h2 className="p-2 text-xl text-white ">{authUser.fullName}</h2>
               </div>
              
-              <ul className="p-4">
-                <li className="py-2">
+              <ul className=" text-black  " >
+                <li className="p-2 hover:bg-sky-200">
                   <a href="#">contacts</a>
                 </li>
-                <li className="py-2">
+                <li className="p-2 hover:bg-sky-200">
                   <a href="#">saved message</a>
                 </li>
-                <li className="py-2">
+                <li className="p-2 hover:bg-sky-200">
                   <a href="#">setting</a>
                 </li>
               </ul>
