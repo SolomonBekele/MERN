@@ -28,7 +28,7 @@ const Conversation = ({conversation,lastIdx,emoji}) => {
 
 				<div className='flex flex-col flex-1'>
 					<div className='flex gap-2 justify-between'>
-						<p className={` text-slate-700 ${isSelected ? "text-white":"text-black"}`}>{conversation.fullName}</p>
+						<p className={` text-slate-700 ${isSelected ? "":"text-black"}`}>{conversation.fullName}</p>
 						<span className='text-xl'>{emoji}</span>
 					</div>
 				</div>

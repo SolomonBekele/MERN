@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { FaBars } from 'react-icons/fa';
+import { IoMdContact } from "react-icons/io";
 import { AuthContext, useAuthContext } from '../../context/AuthContext';
+import { ContactLink, SavedMessageLink, Setting } from './slide_items';
 const HorizonatalBar = () => {
     const [showSidebar, setShowSidebar] = useState(false);
     const sidebarRef = useRef(null);
@@ -35,20 +37,20 @@ const HorizonatalBar = () => {
               className="fixed top-0 left-0 w-80 h-full bg-white shadow-lg z-20 transition-transform duration-300 ease-in-out transform translate-x-0"
             >
               {/* Your sidebar content goes here */}
-              <div className='bg-slate-500 '>
+              <div className= "p-5">
                 <img className='w-16  pt-2 mx-4 rounded-full ' src={`${authUser.profilePic}`} alt="" />
-               <h2 className="p-2 text-xl text-white ">{authUser.fullName}</h2>
+               <h2 className="p-2 text-sm text-black ">{authUser.fullName}</h2>
               </div>
              
               <ul className=" text-black  " >
                 <li className="p-2 hover:bg-sky-200">
-                  <a href="#">contacts</a>
+                  <ContactLink/>
                 </li>
                 <li className="p-2 hover:bg-sky-200">
-                  <a href="#">saved message</a>
+                  <SavedMessageLink/>
                 </li>
                 <li className="p-2 hover:bg-sky-200">
-                  <a href="#">setting</a>
+                  <Setting/>
                 </li>
               </ul>
             </div>
