@@ -17,3 +17,5 @@ configure the template paths
 # daisy ui
 https://daisyui.com/docs/install/
 npm i -D daisyui@latest
+
+ok
