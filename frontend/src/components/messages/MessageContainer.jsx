@@ -19,10 +19,16 @@ const MessageContainer = () => {
         ):(
         <> 
         {/* header */}
-    <div className='bg-slate-500 px-4 py-2 mb-2'>
-        <span className="label-text text-white">To: </span>
-        <span className="text-gray-900 font-bold">{selectedConversation.fullName}</span>
+    <div className='bg-slate-500 flex flex-row  px-4 py-2 mb-2'>
+            <img className="w-12 rounded-full"
+				src={selectedConversation.profilePic}
+				alt='user avatar'
+			/>
+            <span className="text-gray-900 my-auto ms-7  font-bold">{selectedConversation.fullName}</span>
     </div>
+        
+    
+  
     <Messages/>
     <MessageInput/>
     </>

@@ -23,13 +23,13 @@ import toast from 'react-hot-toast';
         }
       }
       return (
-        <form className='pb-2 flex items-center gap-2'onSubmit={handleSubmit}>
- 			<input type='text' placeholder='Search…' className='input input-bordered rounded-full' 
+        <form className='flex items-center gap-2'onSubmit={handleSubmit}>
+ 			<input type='text' placeholder='Search…' className='input h-10 bg-white input-bordered rounded-full' 
       value={search}
       onChange={(e) => setSearch(e.target.value)}
       />
- 			<button type='submit' className='btn btn-circle bg-sky-500 text-white'>
- 				<IoSearchSharp className='w-6 h-6 outline-none' />
+ 			<button type='submit' className='btn btn-circle bg-slate-400 border-none hover:bg-sky-200 text-white'>
+ 				<IoSearchSharp className='w-4 h-4 outline-none' />
  			</button>
  		</form>
       )

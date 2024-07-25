@@ -11,7 +11,7 @@ const Conversation = ({conversation,lastIdx,emoji}) => {
 
 	return (
 		<>
-			<div className={`flex gap-2 items-center hover:bg-sky-500 rounded p-2 py-1 cursor-pointer
+			<div className={`flex gap-2  text-black hover:bg-sky-200 rounded p-2 py-1 cursor-pointer
 			${isSelected ? "bg-sky-500":""}
 			`}
 			// 
@@ -28,7 +28,7 @@ const Conversation = ({conversation,lastIdx,emoji}) => {
 
 				<div className='flex flex-col flex-1'>
 					<div className='flex gap-3 justify-between'>
-						<p className='font-bold text-gray-200'>{conversation.fullName}</p>
+						<p className='font-bold text-black'>{conversation.fullName}</p>
 						<span className='text-xl'>{emoji}</span>
 					</div>
 				</div>
